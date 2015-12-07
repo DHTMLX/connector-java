@@ -114,7 +114,7 @@ public class LogManager {
 			log_writer.flush();
 			log_writer.close();
 		} catch (IOException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	
