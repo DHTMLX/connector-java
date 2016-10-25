@@ -307,7 +307,7 @@ public abstract class DBDataWrapper extends DataWrapper {
 	 * @return the string
 	 */
 	protected String select_query(String select,String from,String where,String sort,String start,String count){
-		if (from == "")
+		if (from.equals(""))
 			return select;
 		
 		String sql="SELECT "+select+" FROM "+from;

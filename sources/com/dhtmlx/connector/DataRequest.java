@@ -265,13 +265,13 @@ public class DataRequest {
 			fieldset = sql;
 			return;
 		}
-		Pattern limit_regex = Pattern.compile("[ \n]+limit[\n ,0-9]", Pattern.CASE_INSENSITIVE);
-		Pattern where_regex = Pattern.compile("[ \n]+where", Pattern.CASE_INSENSITIVE);
-		Pattern from_regex = Pattern.compile("[ \n]+from", Pattern.CASE_INSENSITIVE);
+		Pattern limit_regex = Pattern.compile("[ \n\t]+limit[\n\t ,0-9]", Pattern.CASE_INSENSITIVE);
+		Pattern where_regex = Pattern.compile("[ \n\t]+where[ \n\t]+", Pattern.CASE_INSENSITIVE);
+		Pattern from_regex = Pattern.compile("[ \n\t]+from[ \n\t]+", Pattern.CASE_INSENSITIVE);
 		Pattern select_regex = Pattern.compile("select", Pattern.CASE_INSENSITIVE);
-		Pattern order_regex = Pattern.compile("[ \n]+order[ ]+by", Pattern.CASE_INSENSITIVE);
+		Pattern order_regex = Pattern.compile("[ \n\t]+order[ \n\t]+by[ \n\t]+", Pattern.CASE_INSENSITIVE);
 		Pattern empty_regex = Pattern.compile("[ ]+", Pattern.CASE_INSENSITIVE);
-		Pattern groupby_regex = Pattern.compile("[ \n]+group[ \n]+by[ \n]+", Pattern.CASE_INSENSITIVE);
+		Pattern groupby_regex = Pattern.compile("[ \n\t]+group[ \n\t]+by[ \n\t]+", Pattern.CASE_INSENSITIVE);
 
 		sql = limit_regex.split(sql)[0]; //drop limit part;
 
